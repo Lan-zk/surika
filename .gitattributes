@@ -1,0 +1,43 @@
+# 默认行为：自动识别文本文件，仓库内与工作区统一使用 LF 换行
+* text=auto eol=lf
+
+# 明确的文本文件类型
+*.md      text eol=lf
+*.txt     text eol=lf
+*.svg     text eol=lf
+*.json    text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.toml    text eol=lf
+*.css     text eol=lf
+*.html    text eol=lf
+*.js      text eol=lf
+*.ts      text eol=lf
+*.sh      text eol=lf
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+
+# Windows 脚本保留 CRLF
+*.bat     text eol=crlf
+*.cmd     text eol=crlf
+*.ps1     text eol=crlf
+
+# 二进制文件：不参与换行符转换与文本 diff
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.ico     binary
+*.webp    binary
+*.pdf     binary
+*.zip     binary
+*.gz      binary
+*.woff    binary
+*.woff2   binary
+*.ttf     binary
+*.otf     binary
+
+# 避免 Git 在 diff 中把锁定文件当文本展示
+package-lock.json  linguist-generated=true
+pnpm-lock.yaml     linguist-generated=true
+yarn.lock          linguist-generated=true

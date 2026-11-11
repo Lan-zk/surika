@@ -1,0 +1,76 @@
+# ---------- 操作系统 ----------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ---------- 编辑器 / IDE ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.iml
+
+# ---------- 环境变量与密钥 ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ---------- 依赖 ----------
+node_modules/
+.pnp
+.pnp.js
+vendor/
+bower_components/
+
+# ---------- 构建产物 ----------
+dist/
+build/
+out/
+.output/
+.next/
+.nuxt/
+.cache/
+*.tsbuildinfo
+*.min.js
+*.min.css
+
+# ---------- 日志与临时文件 ----------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+tmp/
+temp/
+*.tmp
+*.bak
+
+# ---------- 测试与覆盖率 ----------
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- 其他工具目录 ----------
+.codegraph/
+.DS_Store?
