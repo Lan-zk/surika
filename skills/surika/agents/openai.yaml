@@ -1,0 +1,4 @@
+interface:
+  display_name: "Surika"
+  short_description: "自由探索编程语言、源码与软件设计，逐步形成有依据的架构判断能力"
+  default_prompt: "使用 $surika 帮助我学习当前感兴趣的软件工程问题，按我的目的选择深度和学习方式。"
