@@ -11,6 +11,8 @@ Surika is a learning skill for people who build software with AI. It helps you u
 
 Start with a question. Ask for a direct explanation, read source code together, compare approaches, or visualize how a program runs. Skip exercises, change topics, or return to development whenever you want. Surika provides a teaching workflow without taking over the conversation.
 
+Use [surika-knowledge](skills/surika-knowledge/SKILL.md) independently to capture, look up, or correct professional experience. For example, “Show me the judgments I contributed to this debugging session.” To install it locally, replace `--skill surika` below with `--skill surika-knowledge`, or copy the entire `skills/surika-knowledge/` directory. Both skills use `~/.surika/` in your home directory for personal knowledge across projects by default.
+
 ## Installation
 
 Install the entire [`skills/surika/`](skills/surika/) directory, including its references and brand assets. There is no application to build, service to start, or separate model to configure. Your agent provides the model, file access, and execution tools.
@@ -100,9 +102,15 @@ For GitHub installations, update with `npx skills@latest update surika`. For loc
 
 If your agent does not discover the skill, check that the installation scope matches your current project and that the installed folder directly contains `SKILL.md`. Then open a new conversation or restart the host. A CLI listing confirms files are present, not that the host has loaded them; check the host's skill list and actual invocation.
 
+## Capture and reuse knowledge
+
+Ask surika-knowledge to preview your own technical decisions from a conversation, then ask it to save the ones you want. In another project with access to the same home directory, ask Surika to explain a new topic using that experience. You can ask to try a changed constraint and save your reasoning with a link to the earlier record.
+
+Browse or correct records through the agent or edit the Markdown in `~/.surika/records/`. The directory is created on the first write. From this checkout, run `python3 skills/surika-knowledge/scripts/knowledge.py search` to list summaries. The bundled CLI requires Python 3.9+; see the [record commands and format](skills/surika-knowledge/references/store.md).
+
 ## Learning records and boundaries
 
-When continuity is useful, Surika can save a few relevant details in a directory you choose or in the workspace's `.surika/`: the current question, relevant experiences, and assistance received. Short questions need no record. You can decline saving or inspect, edit, and delete the files yourself. Records are not automatically committed or uploaded; check ignore rules when working inside a Git repository.
+Technical background and reusable project experience default to `~/.surika/` in your home directory. Project-specific learning progress and materials stay in the workspace’s `.surika/`. You can choose another directory. Short questions need no record. You can decline saving or inspect, edit, and delete the files yourself. Records are not automatically committed or uploaded; check ignore rules when working inside a Git repository.
 
 Surika distinguishes technical evidence, observed execution, and hypothetical reasoning, as well as your own work and work done by the agent. It does not provide an execution sandbox, background review reminders, or permanent “mastery” scores. Its teaching methods have research references; Surika's long-term learning outcomes remain unverified.
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Surika 专业知识记录"
+  short_description: "从会话或对话中整理技术背景与项目经验，查询和修正个人记录"
+  default_prompt: "使用 $surika-knowledge 从这次会话整理值得沉淀的专业经验，先给我看候选记录。"

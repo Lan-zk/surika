@@ -11,6 +11,8 @@ Surika 是面向 AI 编程者的学习 skill：在你使用 Coding Agent 做项�
 
 从一个问题开始就够了。你可以要求直接解释、一起读源码、比较方案，或用图看清执行过程；随时跳过练习、换题、回到开发。Surika 提供教学工作流，不接管整个会话。
 
+也可独立使用 [surika-knowledge](skills/surika-knowledge/SKILL.md) 提取、查询和修正专业记录。例如：“整理这次排障中我自己提出的判断，先给我看。”从本地安装时将下方命令中的 `--skill surika` 换成 `--skill surika-knowledge`，或手动复制整个 `skills/surika-knowledge/` 目录。两个入口默认从用户主目录的 `~/.surika/` 读取个人知识，换项目后仍可复用。
+
 ## 安装
 
 安装内容是 [`skills/surika/`](skills/surika/) 整个目录，包括参考文档和品牌素材；无需构建应用、启动服务或配置单独的模型。模型、文件访问与执行工具由你的 Agent 提供。
@@ -85,6 +87,14 @@ cp -R /absolute/path/to/surika/skills/surika .agents/skills/surika
 
 可视化按问题现场生成，沿用 Surika 的品牌和[设计指导](skills/surika/references/DESIGN.md)。它应表达关系与变化，而不是把对话段落搬到页面；静态图也可以，不强制做题或互动。
 
+## 从沉淀到学习
+
+1. 在开发会话中说：“用 surika-knowledge 提取我在这次讨论中作出的技术判断，先给我看。”认可后说“保存”。也可以从“我想梳理自己参与过的迁移项目”开始对话。
+2. 换到另一项目或会话后说：“用 Surika 结合我之前的迁移经历解释双写风险。”两个宿主需要能访问同一个个人目录。想检验理解时可以说“换一个条件，让我自己判断”；想保留新表现时说“把我刚才的判断和旧项目联系起来保存”。
+3. 随时说“列出迁移相关记录”或“那次选型由同事负责，请修正”。也可直接用编辑器打开 `~/.surika/records/` 中的 Markdown 文件。
+
+首次保存会初始化个人目录。在源码仓库运行 `python3 skills/surika-knowledge/scripts/knowledge.py search` 可浏览摘要，加检索词可缩小范围。命令行需要 Python 3.9+，支持查看、更新和删除；见[工具用法](skills/surika-knowledge/references/store.md)。
+
 ## 确认安装、更新与卸载
 
 ```bash
@@ -102,7 +112,7 @@ npx skills@latest remove surika
 
 ## 学习记录与边界
 
-需要续接时，Surika 可以把少量线索保存在你指定的目录或当前工作区的 `.surika/`：当前问题、相关经历和必要的帮助条件。短问答无需保存，你也可以拒绝记录，或自行查看、修改与删除文件。记录不自动提交或上传；位于 Git 仓库时注意忽略规则。
+技术背景和可复用的项目经验默认保存在 `~/.surika/`。仅属于当前项目的学习进度和材料保存在工作区的 `.surika/`。你可以指定其他目录。短问答无需保存，你也可以拒绝记录，或自行查看、修改与删除文件。记录不自动提交或上传；位于 Git 仓库时注意忽略规则。
 
 Surika 区分技术依据、运行结果与推演，也区分你的表现和 Agent 代做的部分。它不提供独立执行沙箱、后台复习提醒或永久“掌握”评分。教学方法有研究参考，Surika 本身的长期学习效果仍待验证。
 
